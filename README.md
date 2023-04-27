@@ -6,6 +6,7 @@
 
 - Clone the repository `git clone git@github.com:mongare70/google-translate-nodejs.git`
 - Setup your Cloud Translation API configs via https://cloud.google.com/translate/docs/setup
+- Add project_id in `.env` file (reference: `.env.example`)
 - Run `npm install` to install all dependencies
 - Run `npm run dev`
 
