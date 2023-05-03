@@ -1,11 +1,10 @@
 {
-  "name": "express-test",
+  "name": "translate-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node app.js translate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,10 +13,7 @@
   "dependencies": {
     "@google-cloud/translate": "^7.2.1",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "node-fetch": "^2.6.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
+    "node-fetch": "^2.6.1",
+    "yargs": "^17.7.2"
   }
 }

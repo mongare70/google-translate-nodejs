@@ -1,6 +1,11 @@
-# Google Cloud Translate
+# en.json to [lang_code].json script
 
-- This is a simple express.js implementation of Google's _Cloud Translation API Client Library_ for Node.js
+- This is a simple script that changes the en.json file in "assets/i18n/" folder to the [lang_code].json file you desire
+
+### Technologies used
+
+- Google's [_Cloud Translation API Client Library_](https://www.npmjs.com/package/@google-cloud/translate) for Node.js
+- [Yargs](https://www.npmjs.com/package/yargs)
 
 ### Installation
 
@@ -8,14 +13,7 @@
 - Setup your Cloud Translation API configs via https://cloud.google.com/translate/docs/setup
 - Add project_id in `.env` file (reference: `.env.example`)
 - Run `npm install` to install all dependencies
-- Run `npm run dev`
-
-### API Endpoints
-
-| HTTP Verbs | Endpoints  | Action                                        |
-| ---------- | ---------- | --------------------------------------------- |
-| GET        | /          | To health check                               |
-| POST       | /translate | Translate `text` in Body to `lang` in Headers |
+- Run `npm start -- --lang=<language_code>`
 
 ### Authors
 

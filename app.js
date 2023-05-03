@@ -1,23 +1,20 @@
-const express = require("express");
-require("dotenv").config();
-const TranslateService = require("./translate");
+const yargs = require("yargs");
+const translateService = require("./translate");
 
-const app = express();
-app.use(express.json());
-const port = 3000;
-
-app.get("/", (req, res) => {
-  res.send("test");
+// Create add command
+yargs.command({
+  command: "translate",
+  describe: "Translate `en.json` file to `[lang].json` file",
+  builder: {
+    lang: {
+      describe: "language code",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: (argv) => {
+    translateService(argv.lang).catch((error) => console.log(error));
+  },
 });
 
-app.post("/translate", async (req, res) => {
-  const translatedText = await TranslateService(
-    req.body.text,
-    req.header("lang")
-  );
-  res.send({ text: translatedText });
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+yargs.parse();
