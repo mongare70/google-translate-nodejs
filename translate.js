@@ -4,13 +4,11 @@ const fs = require("fs");
 require("dotenv").config();
 
 const projectId = process.env.PROJECT_ID;
-const location = "global";
 
 // Instantiates a client
 const translate = new Translate({ projectId });
 
 const inputPath = "./assets/i18n/en.json";
-const outputPath = "./assets/i18n/sw.json";
 
 const interpolatedDataRegex = /{{.*?}}/g;
 
